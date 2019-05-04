@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr-CH">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Random Eat</title>
+    <link rel="stylesheet" href="leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/regular.js" integrity="sha384-Uc9toywOA44owltk1MWl0lQZ+L0mBzJkLQcdif6+JtG9izvok9DLJtCZX57Uq3k2" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/fontawesome.js" integrity="sha384-EMmnH+Njn8umuoSMZ3Ae3bC9hDknHKOWL2e9WJD/cN6XLeAN7tr5ZQ0Hx5HDHtkS" crossorigin="anonymous"></script>
+    <style>
+        html, body { height: 100%; padding: 0; margin: 0; }
+        #map { height: 100%; width: 100vw; }
+    </style>
+</head>
+<body>
+    <nav class="navbar has-shadow is-spaced" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item">
+                <h1 class="title">Random Eat 🍽️</h1>
+            </a>
+        </div>
+    </nav>
+    <main>
+        <div class="box">
+        <section>
+            <h2 class="subtitle">Tu as la dalle et tu sais pas où aller manger ?</h2>
+            <input id="search" class="input" type="text" placeholder="Où es-tu ?">
+            <button class="button is-large is-outlined is-warning">Random <i class="fa fa-repeat" aria-hidden="true"></i></button>
+        </section>
+        </div>
+        <section>
+            <div class="box">
+                <p>
+                    Nom :
+                </p>
+                <p>
+                    Adresse :
+                </p>
+                <p>
+                    Site web :
+                </p>
+                <button class="button is-large">
+                    Aller !
+                </button>
+            </div>
+        </section>
+        </main>
+    <div id="map"></div>
+    <footer>
+    </footer>
+    <script src="bundle.js"></script>
+</body>
+</html>
