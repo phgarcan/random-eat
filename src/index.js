@@ -1,10 +1,8 @@
-import Data from './data.js';
-import L from 'leaflet';
-import * as R from 'ramda';
-import buffer from '@turf/buffer';
-import bbox from '@turf/bbox';
-import getRestaurants from './getRestaurants';
-import search from './search';
+import L from 'leaflet'
+import buffer from '@turf/buffer'
+import bbox from '@turf/bbox'
+import getRestaurants from './getRestaurants'
+import search from './search'
 
 const map = L.map('map').setView([46.7785, 6.6412], 15);
 
@@ -20,8 +18,8 @@ map.on('click', e => {
     const geojson = { type: 'Point', coordinates: [lng, lat] };
     const rayon1km = buffer(geojson, 1);
     getRestaurants(bbox(rayon1km))
-        .then(restaurants => { console.log(restaurants);
-            restaurants.forEach(({ latitude, longitude, name }) => {
+        .then(restaurants => {
+            restaurants.forEach(({ latitude, longitude, name}) => {
                 L.marker([latitude, longitude])
                     .bindPopup(name)
                     .addTo(map)
@@ -39,21 +37,3 @@ document.getElementById('search')
                 })
         }
     });
-
-const marker = L.marker({
-    iconUrl: 'https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png',
-    iconSize: [25, 25],
-    iconAnchor: [10, 10],
-});
-
-Data.features
-    .filter(feature => R.pathEq(['geometry', 'type'], 'Point', feature))
-    //.filter(feature => R.pathEq(['properties', 'amenity'], 'fast_food', feature))
-    .map(feature => {
-        const [lat, lon] = R.path(['geometry', 'coordinates'], feature);
-        L.marker([lon, lat], { icon: marker }).addTo(map)
-    });
-
-tiles.addTo(map);
-
-
