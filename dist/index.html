@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
-    <title>Random Eat</title>
+    <title>🍽 Random Eat</title>
+    <link rel="shortcut icon" href="http://example.com/myicon.ico">
     <link rel="stylesheet" href="leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/regular.js" integrity="sha384-Uc9toywOA44owltk1MWl0lQZ+L0mBzJkLQcdif6+JtG9izvok9DLJtCZX57Uq3k2" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/fontawesome.js" integrity="sha384-EMmnH+Njn8umuoSMZ3Ae3bC9hDknHKOWL2e9WJD/cN6XLeAN7tr5ZQ0Hx5HDHtkS" crossorigin="anonymous"></script>
@@ -19,10 +21,10 @@
         #side-nav {
             position: fixed;
             z-index: 7;
-            margin-top: 150px;
             margin-left: 10px;
             left: -10px;
-            width: 300px;
+            height: 100vh;
+            width: 500px;
             font-size: 20px;
             background-color: #FAFAFA;
             border-radius: 0 5px 5px 0;
@@ -37,30 +39,56 @@
         .random-btn {
             margin-top: 20px;
         }
-        .infos {
-            background-color: white;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            padding: 15px;
-            margin-top: 20px;
-            border-radius: 5px;
+        .ft {
+            text-align: center;
+            font-size: 12px;
+            color: darkgray;
         }
     </style>
 </head>
 <body>
 <div id="side-nav">
-    <div>
-        <h1>Random Eat</h1>
-        <h2>Tu as la dalle et sais pas où aller manger ?</h2>
-        <input id="search" type="text" placeholder="Où es-tu ?">
+    <div class="box">
+        <h1 class="title is-1">🍽️ RandomEAT</h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Tu es à</th>
+                <td>...</td>
+            </tr>
+            </thead>
+        </table>
+        <p>Tu as la dalle et tu ne sais pas où aller manger ?</p>
     </div>
-    <div>
-        <button id="random-btn" type="button">Random</button>
+    <div class="box">
+        <a id="random" class="button is-primary is-fullwidth">Random</a>
     </div>
-    <div id="inf" class="infos">
-        <p>Nom :</p>
-        <p>Adresse :</p>
-        <p>Site web :</p>
-        <p>Cuisine :</p>
+    <div id="inf" class="box">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <th>Adresse</th>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <th>Site web</th>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <th>Cuisine</th>
+                    <td>...</td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="box">
+        <p class="ft">Un projet pour le cours de Visualisation de Données</p>
+        <p class="ft"><a href="https://heig-vd.ch/formations/bachelor/filieres/ingenierie-des-medias" target="_blank">Ingénierie des Médias</a> | <a href="https://heig-vd.ch" target="_blank">HEIG-VD</a></p>
+        <p class="ft">Fait avec ❤️ par Pedro Garcia</p>
     </div>
 </div>
 <div id="map"></div>

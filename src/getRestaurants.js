@@ -4,7 +4,6 @@ const getUrl = bbox => [
     '(node["amenity"="restaurant"]',
     `(${bbox[1]},${bbox[0]},${bbox[3]},${bbox[2]});`,
     ');out body;>;out skel qt;'
-
 ].join('');
 
 const format = ({ elements }) =>
@@ -12,7 +11,6 @@ const format = ({ elements }) =>
         longitude: lon,
         latitude: lat,
         name: tags.name || 'UNKNOWN',
-
     }));
 
 export default bbox =>
