@@ -31,7 +31,7 @@ const loc = ({ lat, lng }) => {
 position()
     .then(loc)
     .then(({ lat, lng }) => {
-        map.setView([lat, lng], 12);
+        map.setView([lat, lng], 16);
     });
 
 const trouverLesRestos = ville =>
@@ -48,8 +48,5 @@ const trouverLesRestos = ville =>
 
 document.getElementById('random')
     .addEventListener('click', e => {
-        if (e.click === true) {
-            const nomDeLaVille = e.target.value;
-            trouverLesRestos(nomDeLaVille)
-        }
+
     });
