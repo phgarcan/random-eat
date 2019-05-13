@@ -6,6 +6,6 @@ export default () => new Promise((resolve, reject) => {
         return resolve({
             lat: location.coords.latitude,
             lng: location.coords.longitude,
-        });
-    });
+        })
+    })
 })

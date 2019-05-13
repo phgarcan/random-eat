@@ -36,13 +36,26 @@
             width: 100vw;
             z-index: 5;
         }
-        .random-btn {
-            margin-top: 20px;
-        }
         .ft {
             text-align: center;
             font-size: 12px;
             color: darkgray;
+        }
+        @keyframes pulse{
+        to {
+            transform: scale(1.05);
+            -webkit-transform: scale(1.05);
+        }
+        }
+        .animation {
+            animation: pulse .5s infinite alternate;
+            -webkit-animation: pulse .5s infinite alternate;
+            transform-origin: center;
+            -webkit-transform-origin: center;
+        }
+        .leaflet-control {
+            position: relative;
+            left: 500px;
         }
     </style>
 </head>
@@ -54,11 +67,11 @@
             <thead>
             <tr>
                 <th>Tu es à</th>
-                <td>...</td>
+                <td>Yverdon-les-Bains</td>
             </tr>
             </thead>
         </table>
-        <p>Tu as la dalle et tu ne sais pas où aller manger ?</p>
+        <p style="font-size: 16px;">Tu as la dalle et tu ne sais pas où aller manger ?</p>
     </div>
     <div class="box">
         <a id="random" class="button is-primary is-fullwidth">Random</a>
@@ -68,19 +81,19 @@
             <thead>
                 <tr>
                     <th>Nom</th>
-                    <td>...</td>
+                    <td id="n"></td>
                 </tr>
                 <tr>
                     <th>Adresse</th>
-                    <td>...</td>
+                    <td id="a"></td>
                 </tr>
                 <tr>
                     <th>Site web</th>
-                    <td>...</td>
+                    <td id="s"></td>
                 </tr>
                 <tr>
                     <th>Cuisine</th>
-                    <td>...</td>
+                    <td id="c"></td>
                 </tr>
             </thead>
         </table>
