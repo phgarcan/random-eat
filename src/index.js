@@ -1,9 +1,11 @@
 import L from 'leaflet'
 import buffer from '@turf/buffer'
+import $ from 'jquery'
 import bbox from '@turf/bbox'
 import getRestaurants from './getRestaurants'
 // import search from './search'
 import position from './getLocation'
+// import R from 'Ramda'
 
 // initialiser la carte
 const map = L.map('map').setView([0,0], 2)
@@ -39,17 +41,33 @@ const loc = ({ lat, lng }) => {
 
     return getRestaurants(bbox(rayon2km))
         .then(restaurants => {
-            restaurants.forEach(({ latitude, longitude, name}) => {
-                L.marker([latitude, longitude])
-                    .bindPopup(name)
-                    .addTo(map)
-            })
+            $("#random").click( function()
+                {
+                    let restaurant = restaurants[Math.floor(Math.random() * restaurants.length)];
+                    console.log(restaurant.name)
+                    L.marker([restaurant.latitude, restaurant.longitude])
+                        .bindPopup(restaurant.name)
+                        .addTo(map)
+                        .openPopup()
+                    let n = document.getElementById('n')
+                    n.innerHTML = restaurant.name
+                    let s = document.getElementById('s')
+                    s.innerHTML = restaurant.website
+                    let c = document.getElementById('c')
+                    c.innerHTML = restaurant.cuisine
+                }
+
+            )
+
+
             return { lat, lng }
         })
+
+
 }
 
 position()
     .then(loc)
     .then(({ lat, lng }) => {
-        map.setView([lat, lng], 17)
+        map.setView([lat, lng], 15)
     })

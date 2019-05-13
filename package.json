@@ -23,6 +23,7 @@
     "@turf/centroid": "^6.0.2",
     "@turf/turf": "^5.1.6",
     "bulma": "^0.7.4",
+    "jquery": "^3.4.1",
     "leaflet": "^1.4.0",
     "ramda": "^0.26.1",
     "shuffle-array": "^1.0.1"

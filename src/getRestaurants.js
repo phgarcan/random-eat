@@ -10,9 +10,9 @@ const format = ({ elements }) =>
     elements.map(({ tags, lon, lat }) => ({
         longitude: lon,
         latitude: lat,
-        name: tags.name || 'UNKNOWN',
-        website: tags.website || 'UNKNOWN',
-        cuisine: tags.cuisine || 'UNKNOWN'
+        name: tags.name || 'inexistant',
+        website: tags.website || 'inexistant',
+        cuisine: tags.cuisine || 'inexistant'
     }))
 
 export default bbox =>
