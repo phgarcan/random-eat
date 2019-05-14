@@ -3,9 +3,7 @@ import buffer from '@turf/buffer'
 import $ from 'jquery'
 import bbox from '@turf/bbox'
 import getRestaurants from './getRestaurants'
-// import search from './search'
 import position from './getLocation'
-// import R from 'Ramda'
 
 // initialiser la carte
 const map = L.map('map').setView([0,0], 2)
@@ -31,17 +29,17 @@ const loc = ({ lat, lng }) => {
         .bindPopup("Tu es ici")
         .openPopup()
 
+    // définit le type de marker et leur position sur la carte
     const geojson = {
         type: 'Point',
         coordinates: [lng, lat]
     }
 
-    // récupérer tous les restaurants dans un rayon de 2km
     const rayon2km = buffer(geojson, 2)
 
     return getRestaurants(bbox(rayon2km))
         .then(restaurants => {
-            $("#random").click( function()
+            $("#random").click(function()
                 {
                     let restaurant = restaurants[Math.floor(Math.random() * restaurants.length)];
                     console.log(restaurant.name)
@@ -56,14 +54,9 @@ const loc = ({ lat, lng }) => {
                     let c = document.getElementById('c')
                     c.innerHTML = restaurant.cuisine
                 }
-
             )
-
-
             return { lat, lng }
         })
-
-
 }
 
 position()

@@ -45,6 +45,8 @@ trier les données obtenues. Celles-ci sont également intégrées au code HTML 
 Les données ont été enregistrées dans un premier temps sous format JSON (texte structuré) pour qu'elles puissent 
 être ensuite interogées et exploitées lors de l'usage de l'application.
 
+[![](https://i.ibb.co/GPRWNvB/image.png)](https://i.ibb.co/GPRWNvB/image.png)
+
 ### Explication sur le choix du type de représentation
 Le moyen le plus adapté pour représenter la localisation d'un endroit est à travers une carte. Permettre à l'utilisateur
 d'interagir avec cette dernière et qu'il puisse se représenter la distance le séparant des différents établissements. 
@@ -58,5 +60,6 @@ cela soit aux alentours de leur domicile ou dans une région inconnue.
 - Permettre aux utilisateurs de choisir leur localisation via formulaire (input)
 - Rendre l'application utilisable sur les dispositifs mobiles
 - Traçage d'itinéraire
+- Rajouter des informations concernant le restaurant au _PopUp_
 
 *"L'important, ce ne sont pas les cartes, c'est ce que vous en faites" - Anonyme*
