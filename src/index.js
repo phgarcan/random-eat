@@ -42,7 +42,6 @@ const loc = ({ lat, lng }) => {
             $("#random").click(function()
                 {
                     let restaurant = restaurants[Math.floor(Math.random() * restaurants.length)];
-                    console.log(restaurant.name)
                     L.marker([restaurant.latitude, restaurant.longitude])
                         .bindPopup(restaurant.name)
                         .addTo(map)
@@ -50,7 +49,14 @@ const loc = ({ lat, lng }) => {
                     let n = document.getElementById('n')
                     n.innerHTML = restaurant.name
                     let s = document.getElementById('s')
-                    s.innerHTML = restaurant.website
+                    if(restaurant.website != 'inexistant'){
+                        s.innerHTML = 'Lien'
+                        s.href = restaurant.website
+                        document.getElementById("icon").style.display = "flex"
+                    }else{
+                        s.innerHTML = restaurant.website
+                        document.getElementById("icon").style.display = "none"
+                    }
                     let c = document.getElementById('c')
                     c.innerHTML = restaurant.cuisine
                 }
